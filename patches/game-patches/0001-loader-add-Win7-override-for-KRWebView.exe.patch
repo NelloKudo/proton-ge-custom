@@ -1,0 +1,24 @@
+From afa3285313aa364fc8ba47cb6a206337cc0f679d Mon Sep 17 00:00:00 2001
+From: NelloKudo <marshnelloosu@gmail.com>
+Date: Tue, 6 May 2025 18:19:17 +0200
+Subject: [PATCH] loader: add Win7 override for KRWebView.exe
+
+Wuthering Waves uses their own implementation of WebView for in-game content, which doesn't
+work properly unless it's set to Win7 like usual msedgewebview2.
+---
+ loader/wine.inf.in | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/loader/wine.inf.in b/loader/wine.inf.in
+index 3003d69d82f..92166981dec 100644
+--- a/loader/wine.inf.in
++++ b/loader/wine.inf.in
+@@ -3268,3 +3268,4 @@ HKLM,Software\Wow6432Node\lucasarts entertainment company llc\Star Wars: Episode
+ ;;Other app-specific overrides
+ HKCU,Software\Wine\AppDefaults\Pentiment.exe\DllOverrides,"SpeechSynthesisWrapper",,"disabled"
+ HKCU,Software\Wine\AppDefaults\Maine-Win64-Shipping.exe\DllOverrides,"SpeechSynthWrapper",0x2,"disabled"
++HKCU,Software\Wine\AppDefaults\KRWebView.exe,"Version",,"win7"
+\ No newline at end of file
+-- 
+2.49.0
+

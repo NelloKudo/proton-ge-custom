@@ -231,6 +231,9 @@
     echo "WINE: -GAME FIXES- add xinput support to Dragon Age Inquisition"
     patch -Np1 < ../patches/game-patches/dai_xinput.patch
 
+    echo "WINE: -GAME FIXES- fix WebView for Wuthering Waves"
+    patch -Np1 < ../patches/game-patches/0001-loader-add-Win7-override-for-KRWebView.exe.patch
+
 ### END GAME PATCH SECTION ###
 
 ### (2-4) WINE HOTFIX/BACKPORT SECTION ###

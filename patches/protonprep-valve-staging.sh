@@ -231,9 +231,6 @@
     echo "WINE: -GAME FIXES- add xinput support to Dragon Age Inquisition"
     patch -Np1 < ../patches/game-patches/dai_xinput.patch
 
-    echo "WINE: -GAME FIXES- fix WebView for Wuthering Waves"
-    patch -Np1 < ../patches/game-patches/0001-loader-add-Win7-override-for-KRWebView.exe.patch
-
 ### END GAME PATCH SECTION ###
 
 ### (2-4) WINE HOTFIX/BACKPORT SECTION ###
@@ -266,6 +263,16 @@
 
 ### END WINE PENDING UPSTREAM SECTION ###
 
+### (2-5-2) SPRITZ PATCHES
+
+    echo "WINE: -SPRITZ- Block GI first connection"
+    patch -Np1 < ../patches/spritz/0001-HACK-Block-Genshin-Impact-from-connecting-on-first-r.patch
+
+    echo "WINE: -SPRITZ- Workaround GI not closing on exit"
+    patch -Np1 < ../patches/spritz/0002-HACK-kernelbase-Terminate-Genshin-Impact-if-ExitProc.patch
+
+    echo "WINE: -SPRITZ- Add Win7 override for KRWebView (WuWa)"
+    patch -Np1 < ../patches/spritz/0003-loader-add-Win7-override-for-KRWebView.exe.patch
 
 ### (2-6) PROTON-GE ADDITIONAL CUSTOM PATCHES ###
 
